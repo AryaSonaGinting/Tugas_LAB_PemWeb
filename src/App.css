@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+/* Reggae-themed header */
+.App-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd200 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.App-header::before {
+  content: '🎵🌴✌️';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.App-header::after {
+  content: '☮️❤️🌈';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.App-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Reggae Book Form Styles */
+.book-form {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.1);
+  position: sticky;
+  top: 20px;
+  border: 3px solid #ff6b35;
+}
+
+.book-form h2 {
+  margin-bottom: 20px;
+  color: #ff6b35;
+  border-bottom: 3px solid #ffd200;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ffd200;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fffdf6;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  background: white;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.reggae-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  flex: 2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reggae-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+}
+
+.cancel-btn {
+  padding: 15px 25px;
+  border: 2px solid #6c757d;
+  border-radius: 8px;
+  background: white;
+  color: #6c757d;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.cancel-btn:hover {
+  background: #6c757d;
+  color: white;
+}
+
+/* Reggae Book List Styles */
+.book-list {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.1);
+  border: 3px solid #ffd200;
+}
+
+.book-list h2 {
+  margin-bottom: 25px;
+  color: #ff6b35;
+  border-bottom: 3px solid #ff6b35;
+  padding-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.no-books {
+  text-align: center;
+  color: #666;
+  padding: 60px 40px;
+  background: #fffdf6;
+  border-radius: 10px;
+  border: 2px dashed #ffd200;
+}
+
+.reggae-symbol {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.no-books h3 {
+  color: #ff6b35;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.reggae-card {
+  border: 2px solid #ffd200;
+  border-radius: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fffdf6 0%, #fff9e6 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.reggae-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd200 100%);
+}
+
+.reggae-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.2);
+  border-color: #ff6b35;
+}
+
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.book-header h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.genre-badge {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.reggae-card p {
+  margin-bottom: 8px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.reggae-card strong {
+  color: #333;
+}
+
+.book-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.edit-btn, .delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+  color: white;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Footer */
+.App-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+  border-top: 2px solid #ffd200;
+  background: white;
+  border-radius: 10px;
+}
+
+.App-footer p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .book-form {
+    position: static;
+  }
+  
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  
+  .book-header {
+    flex-direction: column;
+  }
+  
+  .genre-badge {
+    align-self: flex-start;
+    margin-top: 5px;
+  }
+}
